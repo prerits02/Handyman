@@ -54,21 +54,21 @@ const Grocery = () => {
                         <Text style={{color:"#c8bca5",fontSize:10,paddingHorizontal:5}}>Up to 50% OFF</Text>
                     </View>
                     <Text style={{textAlign:"center",marginVertical:5,color:"#7d7463",fontWeight:"500",fontSize:12}}>Revamped Homes</Text>
-                    <Image style={{width:70,height:70,resizeMode:"cover"}} source={require("../../assets/images/ro.png")} />
+                    <Image style={{width:70,height:70,resizeMode:"cover"}} source={require("../../../assets/images/ro.png")} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.adcard}>
                     <View style={styles.adcardoffer}>
                         <Text style={{color:"#c8bca5",fontSize:10,paddingHorizontal:5}}>Up to 60% OFF</Text>
                     </View>
                     <Text style={{textAlign:"center",marginVertical:5,color:"#7d7463",fontWeight:"500",fontSize:12}}>Sparkling Bathrooms</Text>
-                    <Image style={{width:80,height:70,resizeMode:"cover"}} source={require("../../assets/images/bucket.png")} />
+                    <Image style={{width:80,height:70,resizeMode:"cover"}} source={require("../../../assets/images/bucket.png")} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.adcard}>
                     <View style={styles.adcardoffer}>
                         <Text style={{color:"#c8bca5",fontSize:10,paddingHorizontal:5}}>Up to 50% OFF</Text>
                     </View>
                     <Text style={{textAlign:"center",marginVertical:5,color:"#7d7463",fontWeight:"500",fontSize:12}}>Chef-Style Kitchens</Text>
-                    <Image style={{width:90,height:70}} source={require("../../assets/images/plates.png")} />
+                    <Image style={{width:90,height:70}} source={require("../../../assets/images/plates.png")} />
                 </TouchableOpacity>
             </View>
         </View>

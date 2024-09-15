@@ -8,25 +8,25 @@ const HouseholdEssentials = () => {
       <View style={styles.container}>
         <TouchableOpacity style={styles.card}>
           <View style={styles.imgContainer}>
-            <Image style={styles.img} source={require("../../assets/images/fruitsandvegetables.png")} />
+            <Image style={styles.img} source={require("../../../assets/images/fruitsandvegetables.png")} />
           </View>
           <Text style={styles.maintxt}>Vegetable & Fruits</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.card}>
           <View style={styles.imgContainer}>
-            <Image style={styles.img} source={require("../../assets/images/attaricedal.png")} />
+            <Image style={styles.img} source={require("../../../assets/images/attaricedal.png")} />
           </View>
           <Text style={styles.maintxt}>Atta, Rice & Dal</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.card}>
           <View style={styles.imgContainer}>
-            <Image style={styles.img} source={require("../../assets/images/oilgheeandmasala.png")} />
+            <Image style={styles.img} source={require("../../../assets/images/oilgheeandmasala.png")} />
           </View>
           <Text style={styles.maintxt}>Vegetable & Fruits</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.card}>
           <View style={styles.imgContainer}>
-            <Image style={styles.img} source={require("../../assets/images/Kitchenware&Appliances.png")} />
+            <Image style={styles.img} source={require("../../../assets/images/Kitchenware&Appliances.png")} />
           </View>
           <Text style={styles.maintxt}>Kitchenware & Appliances</Text>
         </TouchableOpacity>

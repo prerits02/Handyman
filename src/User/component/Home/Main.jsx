@@ -11,21 +11,21 @@ import Inoicons from 'react-native-vector-icons/Ionicons'
 const Main = () => {
 
   const card_data = [
-    {id:1,img: require("../../assets/images/destroyall.jpg"),label1:"Destroy all",label2:"your uninvited",label3:"guests at Home",btntxt:"Book Now"},
-    {id:2,img: require("../../assets/images/destroyall.jpg"),label1:"Destroy all",label2:"your uninvited",label3:"guests at Home",btntxt:"Book Now"},
-    {id:3,img: require("../../assets/images/destroyall.jpg"),label1:"Destroy all",label2:"your uninvited",label3:"guests at Home",btntxt:"Book Now"},
+    {id:1,img: require("../../../assets/images/destroyall.jpg"),label1:"Destroy all",label2:"your uninvited",label3:"guests at Home",btntxt:"Book Now"},
+    {id:2,img: require("../../../assets/images/destroyall.jpg"),label1:"Destroy all",label2:"your uninvited",label3:"guests at Home",btntxt:"Book Now"},
+    {id:3,img: require("../../../assets/images/destroyall.jpg"),label1:"Destroy all",label2:"your uninvited",label3:"guests at Home",btntxt:"Book Now"},
   ]
 
   const cleanpest_data = [
-    {id:1,img: require("../../assets/images/mopexample.jpg"),head:"Bathroom Cleaning",service_type:"Service at Home",price:"$49"},
-    {id:2,img: require("../../assets/images/car_clean_example.jpg"),head:"Car Cleaning",service_type:"Service at Home",price:"$149"},
-    {id:3,img: require("../../assets/images/housecleanexample.jpg"),head:"Full House Cleaning",service_type:"Service at Home",price:"$200"},
+    {id:1,img: require("../../../assets/images/mopexample.jpg"),head:"Bathroom Cleaning",service_type:"Service at Home",price:"$49"},
+    {id:2,img: require("../../../assets/images/car_clean_example.jpg"),head:"Car Cleaning",service_type:"Service at Home",price:"$149"},
+    {id:3,img: require("../../../assets/images/housecleanexample.jpg"),head:"Full House Cleaning",service_type:"Service at Home",price:"$200"},
   ]
 
   const services_data = [
-    {id:1,img: require("../../assets/images/servicesexample.png"),head:"Salon",service_type:"Free Waxing",price:"$69"},
-    {id:2,img: require("../../assets/images/massageexample.jpg"),head:"Massage Therapy",service_type:"Free hand massage",price:"$79"},
-    {id:3,img: require("../../assets/images/servicesexample.png"),head:"Hair cutting",service_type:"Free head massage",price:"$100"},
+    {id:1,img: require("../../../assets/images/servicesexample.png"),head:"Salon",service_type:"Free Waxing",price:"$69"},
+    {id:2,img: require("../../../assets/images/massageexample.jpg"),head:"Massage Therapy",service_type:"Free hand massage",price:"$79"},
+    {id:3,img: require("../../../assets/images/servicesexample.png"),head:"Hair cutting",service_type:"Free head massage",price:"$100"},
   ]
 
   return (

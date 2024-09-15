@@ -31,8 +31,8 @@ const Head = () => {
             </View>
         </View>
         <View style={styles.headImg}>
-            <Image style={{width:200,height:50,resizeMode:"cover"}} source={require("../../assets/images/genie1.png")} />
-            <Image style={{width:90,height:90,resizeMode:"cover"}} source={require("../../assets/images/genie2.png")} />
+            <Image style={{width:200,height:50,resizeMode:"cover"}} source={require("../../../assets/images/genie1.png")} />
+            <Image style={{width:90,height:90,resizeMode:"cover"}} source={require("../../../assets/images/genie2.png")} />
         </View>
     </View>
   )

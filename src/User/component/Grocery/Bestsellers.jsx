@@ -5,40 +5,40 @@ const Bestsellers = () => {
 
     const [data,setData] = useState([
         {id:1,desc:"Milk, Curd & Paneer",img:[
-            {imgid:1,res:require("../../assets/images/products.png")},
-            {imgid:2,res:require("../../assets/images/products.png")},
-            {imgid:3,res:require("../../assets/images/products.png")},
-            {imgid:4,res:require("../../assets/images/products.png")}
+            {imgid:1,res:require("../../../assets/images/products.png")},
+            {imgid:2,res:require("../../../assets/images/products.png")},
+            {imgid:3,res:require("../../../assets/images/products.png")},
+            {imgid:4,res:require("../../../assets/images/products.png")}
         ]},
         {id:2,desc:"Vegetables",img:[
-            {imgid:1,res:require("../../assets/images/products.png")},
-            {imgid:2,res:require("../../assets/images/products.png")},
-            {imgid:3,res:require("../../assets/images/products.png")}
+            {imgid:1,res:require("../../../assets/images/products.png")},
+            {imgid:2,res:require("../../../assets/images/products.png")},
+            {imgid:3,res:require("../../../assets/images/products.png")}
         ]},
         {id:3,desc:"Fruits",img:[
-            {imgid:1,res:require("../../assets/images/products.png")},
-            {imgid:2,res:require("../../assets/images/products.png")},
-            {imgid:3,res:require("../../assets/images/products.png")},
-            {imgid:4,res:require("../../assets/images/products.png")},
-            {imgid:5,res:require("../../assets/images/products.png")},
-            {imgid:6,res:require("../../assets/images/products.png")},
-            {imgid:7,res:require("../../assets/images/products.png")}
+            {imgid:1,res:require("../../../assets/images/products.png")},
+            {imgid:2,res:require("../../../assets/images/products.png")},
+            {imgid:3,res:require("../../../assets/images/products.png")},
+            {imgid:4,res:require("../../../assets/images/products.png")},
+            {imgid:5,res:require("../../../assets/images/products.png")},
+            {imgid:6,res:require("../../../assets/images/products.png")},
+            {imgid:7,res:require("../../../assets/images/products.png")}
         ]},
         {id:4,desc:"Chips & Munchies",img:[
-            {imgid:1,res:require("../../assets/images/products.png")},
-            {imgid:2,res:require("../../assets/images/products.png")},
-            {imgid:3,res:require("../../assets/images/products.png")},
-            {imgid:4,res:require("../../assets/images/products.png")},
-            {imgid:5,res:require("../../assets/images/products.png")},
-            {imgid:6,res:require("../../assets/images/products.png")},
-            {imgid:7,res:require("../../assets/images/products.png")},
-            {imgid:8,res:require("../../assets/images/products.png")},
-            {imgid:9,res:require("../../assets/images/products.png")},
-            {imgid:10,res:require("../../assets/images/products.png")},
-            {imgid:11,res:require("../../assets/images/products.png")},
-            {imgid:12,res:require("../../assets/images/products.png")},
-            {imgid:13,res:require("../../assets/images/products.png")},
-            {imgid:14,res:require("../../assets/images/products.png")}
+            {imgid:1,res:require("../../../assets/images/products.png")},
+            {imgid:2,res:require("../../../assets/images/products.png")},
+            {imgid:3,res:require("../../../assets/images/products.png")},
+            {imgid:4,res:require("../../../assets/images/products.png")},
+            {imgid:5,res:require("../../../assets/images/products.png")},
+            {imgid:6,res:require("../../../assets/images/products.png")},
+            {imgid:7,res:require("../../../assets/images/products.png")},
+            {imgid:8,res:require("../../../assets/images/products.png")},
+            {imgid:9,res:require("../../../assets/images/products.png")},
+            {imgid:10,res:require("../../../assets/images/products.png")},
+            {imgid:11,res:require("../../../assets/images/products.png")},
+            {imgid:12,res:require("../../../assets/images/products.png")},
+            {imgid:13,res:require("../../../assets/images/products.png")},
+            {imgid:14,res:require("../../../assets/images/products.png")}
         ]},
     ])
 
@@ -76,21 +76,21 @@ const Bestsellers = () => {
             })}
         </ScrollView>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <ImageBackground source={require("../../assets/images/groceryad.png")} style={styles.grocerad} imageStyle={styles.gadimg}>
+            <ImageBackground source={require("../../../assets/images/groceryad.png")} style={styles.grocerad} imageStyle={styles.gadimg}>
                 <Text style={{color:"#171812",fontSize:25,fontWeight:"700",width:170}}>Sweet and frosty desserts</Text>
                 <Text style={{color:"#3d2c11",fontWeight:"500",width:140,marginVertical:10}}>Escape into a world of frozen goodness</Text>
                 <TouchableOpacity style={styles.adbutton}>
                     <Text style={{color:"#ededed",fontWeight:"500"}}>Shop now</Text>
                 </TouchableOpacity>
             </ImageBackground>
-            <ImageBackground source={require("../../assets/images/groceryad.png")} style={styles.grocerad} imageStyle={styles.gadimg}>
+            <ImageBackground source={require("../../../assets/images/groceryad.png")} style={styles.grocerad} imageStyle={styles.gadimg}>
                 <Text style={{color:"#171812",fontSize:25,fontWeight:"700",width:170}}>Sweet and frosty desserts</Text>
                 <Text style={{color:"#3d2c11",fontWeight:"500",width:140,marginVertical:10}}>Escape into a world of frozen goodness</Text>
                 <TouchableOpacity style={styles.adbutton}>
                     <Text style={{color:"#ededed",fontWeight:"500"}}>Shop now</Text>
                 </TouchableOpacity>
             </ImageBackground>
-            <ImageBackground source={require("../../assets/images/groceryad.png")} style={styles.grocerad} imageStyle={styles.gadimg}>
+            <ImageBackground source={require("../../../assets/images/groceryad.png")} style={styles.grocerad} imageStyle={styles.gadimg}>
                 <Text style={{color:"#171812",fontSize:25,fontWeight:"700",width:170}}>Sweet and frosty desserts</Text>
                 <Text style={{color:"#3d2c11",fontWeight:"500",width:140,marginVertical:10}}>Escape into a world of frozen goodness</Text>
                 <TouchableOpacity style={styles.adbutton}>
