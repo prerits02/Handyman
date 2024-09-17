@@ -3,12 +3,18 @@ import React from 'react'
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import Octicons from "react-native-vector-icons/Octicons"
 import Feather from "react-native-vector-icons/Feather"
+import { DrawerActions } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeCrads = () => {
+
+  const jumpToAction = DrawerActions.jumpTo('Booking');
+  const navigation = useNavigation()
+
   return (
     <View>
       <View style={{flexDirection:"row",justifyContent:"space-between", marginTop:20}}>
-          <TouchableOpacity style={styles.cards}>
+          <TouchableOpacity style={styles.cards} onPress={()=>navigation.dispatch(jumpToAction)}>
             <View style={styles.cardflexd}>
               <Text style={styles.cardtxt}>633</Text>
               <View style={styles.iconcontainer}>
@@ -35,7 +41,7 @@ const HomeCrads = () => {
                 <Feather name="users" size={18} color="#f1b407"/>
               </View>
             </View>
-            <Text style={styles.cardpara}>Total Booking</Text>
+            <Text style={styles.cardpara}>Total Provider</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.cards}>
             <View style={styles.cardflexd}>
@@ -44,7 +50,7 @@ const HomeCrads = () => {
                 <MaterialCommunityIcons name="brightness-percent" size={18} color="#f1b407"/>
               </View>
             </View>
-            <Text style={styles.cardpara}>Total Service</Text>
+            <Text style={styles.cardpara}>Total Revenue</Text>
           </TouchableOpacity>
         </View>
     </View>

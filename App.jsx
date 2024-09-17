@@ -8,6 +8,8 @@ import PickupLocation from './src/User/component/Ginie/PickupLocation';
 import Profile from './src/User/component/Profile/Profile';
 import Signin from './src/Signin/Signin';
 import Dashboard from './src/admin/Screens/Dashboard';
+import AdminHome from './src/admin/Screens/AdminHome';
+import Booking from './src/admin/Screens/Booking';
 // import './gesture-handler';
 
 const Stack = createNativeStackNavigator();
@@ -17,7 +19,9 @@ const App = () => {
     <NavigationContainer independent={true}>
       <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="Signin" component={Signin} />
+        <Stack.Screen name="AdminHome" component={AdminHome} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="Booking" component={Booking} />
         <Stack.Screen name="Main" component={Home} />
         <Stack.Screen name="GinieLocations" component={GinieLocations} />
         <Stack.Screen name="PickupLocation" component={PickupLocation} />

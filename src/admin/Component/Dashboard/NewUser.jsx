@@ -4,7 +4,7 @@ import Feather from "react-native-vector-icons/Feather"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import FontAwesome6 from "react-native-vector-icons/FontAwesome6"
 
-const Provider = () => {
+const NewUser = () => {
 
     const data = [
         {id:1,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Daany Mark"},
@@ -17,7 +17,7 @@ const Provider = () => {
     <View style={styles.ProviderCon}>
         <View>
             <View style={styles.headingcon}>
-              <Text style={styles.headtxt}>New Provider</Text>
+              <Text style={styles.headtxt}>New User</Text>
               <TouchableOpacity>
                   <Text style={styles.viewbtntxt}>View all</Text>
               </TouchableOpacity>
@@ -51,13 +51,13 @@ const Provider = () => {
   )
 }
 
-export default Provider
+export default NewUser
 
 const styles = StyleSheet.create({
     ProviderCon:{
         paddingHorizontal:10,
         paddingVertical:20,
-        backgroundColor:"#f5f7f9"
+        backgroundColor:"#f5f7f9",
       },
       headingcon:{
         flexDirection:"row",

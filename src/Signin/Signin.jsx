@@ -22,7 +22,7 @@ const Signin = () => {
 
     const Submit = () => {
         if (Number == "admin"){
-            navigation.navigate("Dashboard")
+            navigation.navigate("AdminHome")
         }
         else{
             navigation.navigate("Main")
@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
         paddingHorizontal:10,
         fontSize:18,
         fontWeight:"600",
-        borderColor:"#e0e0e0"
+        borderColor:"#e0e0e0",
+        color:"#000"
     },
     Heading:{
         fontSize:35,
