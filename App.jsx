@@ -10,6 +10,8 @@ import Signin from './src/Signin/Signin';
 import Dashboard from './src/admin/Screens/Dashboard';
 import AdminHome from './src/admin/Screens/AdminHome';
 import Booking from './src/admin/Screens/Booking';
+import Details from './src/admin/Component/Booking/Details';
+import BookingService from './src/admin/Component/Booking/BookingService';
 // import './gesture-handler';
 
 const Stack = createNativeStackNavigator();
@@ -22,6 +24,8 @@ const App = () => {
         <Stack.Screen name="AdminHome" component={AdminHome} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Booking" component={Booking} />
+        <Stack.Screen name="BookingDetails" component={Details} />
+        <Stack.Screen name="BookingService" component={BookingService} />
         <Stack.Screen name="Main" component={Home} />
         <Stack.Screen name="GinieLocations" component={GinieLocations} />
         <Stack.Screen name="PickupLocation" component={PickupLocation} />

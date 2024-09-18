@@ -1,64 +1,84 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import Head from '../Component/Head/Head'
+import { Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import Head from '../Component/Head/Head';
+import { Picker } from '@react-native-picker/picker';
+import { useNavigation } from '@react-navigation/native';
 
 const Booking = () => {
 
+  const navigation = useNavigation()
+  const [selected, setSelected] = useState('All');  // Default to 'All'
+
   const data = [
-    {id:1,img:require("../../assets/images/wokerimgexample.jpg"),status:"Pending",bid:"#725",name:"electrical repairs, rewires",price:"$108.00",discount:"10%",date:"25 Mar, 2023 At 10:56 AM",Provider:"Provider Demo"},
-    {id:2,img:require("../../assets/images/wokerimgexample.jpg"),status:"Pending",bid:"#724",name:"Cleaning",price:"$200.00",discount:"none",date:"25 Mar, 2023 At 02:51 PM",Provider:"Provider Demo"},
-    {id:3,img:require("../../assets/images/wokerimgexample.jpg"),status:"Completed",bid:"#721",name:"Test",price:"$121.77",discount:"1%",date:"23 Mar, 2023 At 11:06 PM",Provider:"Provider Demo"},
-]
+    {id: 1, img: require("../../assets/images/wokerimgexample.jpg"), status: "Pending", bid: "#725", name: "electrical repairs, rewires", price: "$108.00", discount: "10%", date: "25 Mar, 2023 At 10:56 AM", Provider: "Provider Demo"},
+    {id: 2, img: require("../../assets/images/wokerimgexample.jpg"), status: "Pending", bid: "#724", name: "Cleaning", price: "$200.00", discount: "none", date: "25 Mar, 2023 At 02:51 PM", Provider: "Provider Demo"},
+    {id: 3, img: require("../../assets/images/wokerimgexample.jpg"), status: "Completed", bid: "#721", name: "Test", price: "$121.77", discount: "1%", date: "23 Mar, 2023 At 11:06 PM", Provider: "Provider Demo"},
+  ];
+
+  // Apply filter based on selected picker value
+  const filteredData = selected === 'All' ? data : data.filter(item => item.status === selected);
 
   return (
     <>
-      <Head name="Booking"/>
-      <ScrollView style={{backgroundColor:"#FFF"}}>
-        {data.map(item=>{
-              return(
-                  <View style={styles.cardContainer} key={item.id}>
-                      <View style={styles.flexcontainer}>
-                          <Image style={styles.cardimg} source={item.img} />
-                          <View style={{flexDirection:"column",justifyContent:"space-between"}}>
-                              <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center",width:"80%"}}>
-                                  {item.status=="Completed"?
-                                      <Text style={styles.completed}>{item.status}</Text>
-                                  :
-                                      <Text style={styles.cardstatus}>{item.status}</Text>
-                                  }
-                                  <Text style={styles.itembid}>{item.bid}</Text>
-                              </View>
-                              <View>
-                                  <Text style={styles.itemname}>{item.name}</Text>
-                              </View>
-                              <View style={{flexDirection:"row",gap:5}}>
-                                  <Text style={styles.itemprice}>{item.price}</Text>
-                                  {item.discount=="none"?null:
-                                      <Text style={styles.itemdiscount}>{"("+item.discount+" Off)"}</Text>
-                                  }
-                              </View>
-                          </View>
-                      </View>
-                      <View style={styles.carddatecontainer}>
-                          <View style={styles.carddate}>
-                              <Text style={styles.dateheading}>Date & Time</Text>
-                              <Text style={styles.datetxt}>{item.date}</Text>
-                          </View>
-                          <View style={styles.cardprovider}>
-                              <Text style={styles.dateheading}>Provider</Text>
-                              <Text style={styles.datetxt}>{item.Provider}</Text>
-                          </View>
-                      </View>
+      <View style={{backgroundColor:"#FFF",height:Dimensions.get("window").height}}>
+        <Head name="Booking" />
+        <View style={styles.pickercontainer}>
+          <Picker
+            style={styles.picker}
+            selectedValue={selected}
+            onValueChange={(itemValue) => setSelected(itemValue)}
+          >
+            <Picker.Item label="All" value="All" />
+            <Picker.Item label="Pending" value="Pending" />
+            <Picker.Item label="Completed" value="Completed" />
+          </Picker>
+        </View>
+        <ScrollView style={{backgroundColor:"#FFF"}}>
+          {filteredData.map(item => {
+            return (
+              <TouchableOpacity style={styles.cardContainer} key={item.id} onPress={()=>navigation.navigate("BookingDetails",{status:item.status})}>
+                <View style={styles.flexcontainer}>
+                  <Image style={styles.cardimg} source={item.img} />
+                  <View style={{flexDirection:"column",justifyContent:"space-between"}}>
+                    <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center",width:"80%"}}>
+                      {item.status === "Completed" ?
+                        <Text style={styles.completed}>{item.status}</Text>
+                      :
+                        <Text style={styles.cardstatus}>{item.status}</Text>
+                      }
+                      <Text style={styles.itembid}>{item.bid}</Text>
+                    </View>
+                    <View>
+                      <Text style={styles.itemname}>{item.name}</Text>
+                    </View>
+                    <View style={{flexDirection:"row",gap:5}}>
+                      <Text style={styles.itemprice}>{item.price}</Text>
+                      {item.discount === "none" ? null : 
+                        <Text style={styles.itemdiscount}>{"("+item.discount+" Off)"}</Text>
+                      }
+                    </View>
                   </View>
-
-              )
+                </View>
+                <View style={styles.carddatecontainer}>
+                  <View style={styles.carddate}>
+                    <Text style={styles.dateheading}>Date & Time</Text>
+                    <Text style={styles.datetxt}>{item.date}</Text>
+                  </View>
+                  <View style={styles.cardprovider}>
+                    <Text style={styles.dateheading}>Provider</Text>
+                    <Text style={styles.datetxt}>{item.Provider}</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            )
           })}
-      </ScrollView>
+        </ScrollView>
+      </View>
     </>
-  )
-}
+  );
+};
 
-export default Booking
+export default Booking;
 
 const styles = StyleSheet.create({
   cardContainer:{
@@ -144,4 +164,10 @@ const styles = StyleSheet.create({
     flexDirection:"row",
     gap:20,
   },
-})
+  pickercontainer:{
+    backgroundColor:"#f5f7f9",
+    marginHorizontal:10,
+    marginVertical:20,
+    borderRadius:10
+  },
+});
