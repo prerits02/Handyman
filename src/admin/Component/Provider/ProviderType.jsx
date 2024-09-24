@@ -2,12 +2,14 @@ import { Dimensions, Image, ScrollView, StyleSheet, Text, TextInput, TouchableOp
 import Entypo from "react-native-vector-icons/Entypo"
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
-import React from 'react'
+import React, { useState } from 'react'
+import SwitchToggle from "react-native-switch-toggle";
 import { useNavigation } from '@react-navigation/native';
 
 const ProviderType = () => {
 
     const navigation = useNavigation()
+    const [on,off] = useState(true)
 
     const data = [
         {id:1,type:"Freelance",status:"ACTIVE"},
@@ -23,7 +25,9 @@ const ProviderType = () => {
                 </TouchableOpacity>
                 <Text style={styles.heading}>Provider Type</Text>
             </View>
-            <Entypo name="plus" size={28} color="#000"/>
+            <TouchableOpacity onPress={()=>navigation.navigate("AddProviderType")}>
+                <Entypo name="plus" size={28} color="#000"/>
+            </TouchableOpacity>
         </View>
         <ScrollView style={{backgroundColor:"#FFF", padding:10,height:Dimensions.get("window").height}}>
             {data.map(item=>{
@@ -42,10 +46,30 @@ const ProviderType = () => {
                         </View>
                         <View style={[styles.flexrow,{borderBottomWidth:0}]}>
                             <MaterialCommunityIcons name="progress-clock" size={18} color="#f1b407"/>
-                            <View>
+                            <View style={{width:"65%"}}>
                                 <Text style={styles.dataheading}>Status</Text>
                                 <Text style={[styles.data,{color:"#058006"}]}>{item.status}</Text>
                             </View>
+                            <SwitchToggle
+                                switchOn={on}
+                                onPress={() => off(!on)}
+                                circleColorOff='#FFF'
+                                circleColorOn='#028105'
+                                backgroundColorOn='#7bbc7c'
+                                backgroundColorOff='grey'
+                                containerStyle={{
+                                    marginTop: 16,
+                                    width: 56,
+                                    height: 28,
+                                    borderRadius: 25,
+                                    padding: 5,
+                                  }}
+                                  circleStyle={{
+                                    width: 20,
+                                    height: 20,
+                                    borderRadius: 20,
+                                  }}
+                            />
                         </View>
                     </View>
                 )

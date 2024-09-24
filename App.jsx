@@ -28,6 +28,7 @@ import AddService from './src/admin/Component/Service/AddService';
 import AddProvider from './src/admin/Component/Provider/AddProvider';
 import PendingProvider from './src/admin/Component/Provider/PendingProvider';
 import ProviderType from './src/admin/Component/Provider/ProviderType';
+import AddProviderType from './src/admin/Component/Provider/AddProviderType';
 // import './gesture-handler';
 
 const Stack = createNativeStackNavigator();
@@ -58,6 +59,7 @@ const App = () => {
         <Stack.Screen name="AddProvider" component={AddProvider} />
         <Stack.Screen name="PendingProvider" component={PendingProvider} />
         <Stack.Screen name="ProviderType" component={ProviderType} />
+        <Stack.Screen name="AddProviderType" component={AddProviderType} />
         <Stack.Screen name="Main" component={Home} />
         <Stack.Screen name="GinieLocations" component={GinieLocations} />
         <Stack.Screen name="PickupLocation" component={PickupLocation} />
