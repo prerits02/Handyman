@@ -1,16 +1,53 @@
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import Entypo from "react-native-vector-icons/Entypo"
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 import MaterialIcons from "react-native-vector-icons/MaterialIcons"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import Feather from "react-native-vector-icons/Feather"
+import Modal from "react-native-modal";
+
+const State = {
+    scrollOffset: null | 1
+  };
 
 const Details = ({ route }) => {
 
     const navigation = useNavigation()
     const { status } = route.params;
+    const [ModalVisible,setModalVisible] = useState(false)
+
+    const modaldata = [
+        {id:1,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from pending approval to complete"},
+        {id:2,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from pending approval to complete"},
+        {id:3,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from pending approval to complete"},
+        {id:4,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from pending approval to complete"},
+        {id:5,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from ongaoin to in progress"},
+        {id:6,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from accepted to ongoing"},
+        {id:7,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking has been assigned to provider demo"},
+        {id:8,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from pending approval to complete"},
+        {id:9,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"New booking added by customer"},
+    ]
+
+
+      handleOnScroll = event => {
+        // this.setState({
+        //   scrollOffset: event.nativeEvent.contentOffset.y,
+        // });
+
+      };
+    
+      handleScrollTo = p => {
+        // if (scrollViewRef==null) {
+        //   setScrollOffset(1)
+        // }
+        // else{
+        //     setScrollOffset(0)
+        // }
+      };
+
+    
 
   return (
     <>
@@ -21,7 +58,7 @@ const Details = ({ route }) => {
                 </TouchableOpacity>
                 <Text style={styles.heading}>{status}</Text>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>setModalVisible(true)}>
                 <Text style={styles.chkstatus}>Check Status</Text>
             </TouchableOpacity>
         </View>
@@ -222,6 +259,52 @@ const Details = ({ route }) => {
                 </View>
             </View>
         </ScrollView>
+        <Modal
+            isVisible={ModalVisible}
+            style={styles.modal}
+            onBackButtonPress={() => setModalVisible(false)}
+            onBackdropPress={() => setModalVisible(false)}
+            onSwipeThreshold={20}
+            swipeDirection={['down']}
+            scrollTo={this.handleScrollTo}
+            scrollOffset={1}
+            scrollOffsetMax={400 - 300} // content height - ScrollView height
+            propagateSwipe={true}
+        >
+            <View style={styles.scrollableModal}>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <View style={styles.modalContent}>
+                        <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
+                            <Text style={[styles.aboutp,{padding:0,marginHorizontal:0}]}>Booking History</Text>
+                            <Text style={[styles.greytxt,{color:"#5e5b96"}]}>ID: #696</Text>
+                        </View>
+                        {modaldata.map(item=>{
+                            return(
+                                <View style={{flexDirection:"row",justifyContent:"space-between",marginVertical:20}} key={item.id}>
+                                    <View style={{width:"20%"}}>
+                                        <Text style={styles.date}>{item.time}</Text>
+                                        <Text style={[styles.aboutp,{padding:0,marginVertical:10,marginHorizontal:0,fontWeight:"400"}]}>{item.date}</Text>
+                                    </View>
+                                    <View style={{width:"20%",alignItems:"center",gap:2}}>
+                                        <FontAwesome name="circle" color="#39af53"/>
+                                        <View>
+                                            <Entypo name="dots-three-vertical" color="#39af53" />
+                                            <Entypo name="dots-three-vertical" color="#39af53" />
+                                            <Entypo name="dots-three-vertical" color="#39af53" />
+                                            <Entypo name="dots-three-vertical" color="#39af53" />
+                                        </View>
+                                    </View>
+                                    <View style={{width:"60%"}}>
+                                        <Text style={[styles.aboutp,{padding:0,marginVertical:0,marginHorizontal:0,fontWeight:"400"}]}>{item.status}</Text>
+                                        <Text style={styles.date}>{item.text}</Text>
+                                    </View>
+                                </View>
+                            )
+                        })}
+                    </View>
+                </ScrollView>
+            </View>
+        </Modal>
     </>
   )
 }
@@ -354,5 +437,18 @@ const styles = StyleSheet.create({
         paddingBottom:15,
         borderColor:"#ebedee",
         marginBottom:15
-    }
+    },
+    modal: {
+        justifyContent: 'flex-end',
+        margin: 0,
+      },
+    scrollableModal: {
+        height: 300,
+        backgroundColor:"#FFF",
+        backgroundColor:"#FFF",
+        borderTopLeftRadius:20,
+        borderTopRightRadius:20,
+        padding:20
+      },
+
 })

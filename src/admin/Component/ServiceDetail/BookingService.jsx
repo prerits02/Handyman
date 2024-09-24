@@ -6,6 +6,7 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import Feather from "react-native-vector-icons/Feather"
 import { useNavigation } from '@react-navigation/native';
+import Popover from 'react-native-popover-view';
 
 const BookingService = () => {
 
@@ -21,9 +22,28 @@ const BookingService = () => {
                     <TouchableOpacity style={[styles.iconbtn,{left:0}]} onPress={()=>navigation.goBack()}>
                         <Entypo name="chevron-left" size={30} color="#57595c"/>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.iconbtn,{right:0,marginRight:10}]}>
-                        <Entypo name="dots-three-horizontal" size={30} color="#57595c"/>
-                    </TouchableOpacity>
+                    
+                    <Popover
+                        from={(
+                            <TouchableOpacity style={[styles.iconbtn,{right:0,marginRight:10}]} onPress={() => setShowPopover(true)}>
+                                <Entypo name="dots-three-horizontal" size={30} color="#57595c"/>
+                            </TouchableOpacity>
+                            )}>
+                                <View style={styles.menu}>
+                                    <TouchableOpacity onPress={() => console.log('Edit')}>
+                                        <Text style={styles.menuItem}>Edit</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity onPress={() => console.log('Delete')}>
+                                        <Text style={styles.menuItem}>Delete</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity onPress={() => console.log('Restore')}>
+                                        <Text style={styles.menuItem}>Restore</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity onPress={() => console.log('Force Delete')}>
+                                        <Text style={styles.menuItem}>Force Delete</Text>
+                                    </TouchableOpacity>
+                                </View>
+                    </Popover>
                     <View style={styles.servicedetail}>
                         <View style={styles.profileContainer}>
                             <Image style={styles.profileimg} source={require("../../../assets/images/wokerimgexample.jpg")} />
@@ -239,5 +259,15 @@ const styles = StyleSheet.create({
         marginRight:10,
         marginBottom:20,
         borderRadius:10
-    }
+    },
+    menu: {
+        padding: 10,
+        width:180
+      },
+      menuItem: {
+        padding: 10,
+        fontSize: 16,
+        color:"#000",
+        fontWeight:"500"
+      },
 })

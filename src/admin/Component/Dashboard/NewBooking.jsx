@@ -1,7 +1,10 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 const NewBooking = () => {
+
+  const navigation = useNavigation()
 
     const data = [
         {id:1,img:require("../../../assets/images/wokerimgexample.jpg"),status:"Pending",bid:"#725",name:"electrical repairs, rewires",price:"$108.00",discount:"10%",date:"25 Mar, 2023 At 10:56 AM",Provider:"Provider Demo"},
@@ -13,13 +16,13 @@ const NewBooking = () => {
     <View style={{backgroundColor:"#FFF"}}>
         <View style={styles.headingcon}>
             <Text style={styles.headtxt}>New Booking</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate("Booking")}>
                 <Text style={styles.viewbtntxt}>View all</Text>
             </TouchableOpacity>
         </View>
         {data.map(item=>{
             return(
-                <View style={styles.cardContainer} key={item.id}>
+                <TouchableOpacity style={styles.cardContainer} key={item.id} onPress={()=>navigation.navigate("BookingDetails",{status:item.status})}>
                     <View style={styles.flexcontainer}>
                         <Image style={styles.cardimg} source={item.img} />
                         <View style={{flexDirection:"column",justifyContent:"space-between"}}>
@@ -52,7 +55,7 @@ const NewBooking = () => {
                             <Text style={styles.datetxt}>{item.Provider}</Text>
                         </View>
                     </View>
-                </View>
+                </TouchableOpacity>
 
             )
         })}

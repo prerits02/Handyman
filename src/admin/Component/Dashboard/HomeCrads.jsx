@@ -23,7 +23,7 @@ const HomeCrads = () => {
             </View>
             <Text style={styles.cardpara}>Total Booking</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.cards}>
+          <TouchableOpacity style={styles.cards} onPress={()=>navigation.navigate("AllService")}>
             <View style={styles.cardflexd}>
               <Text style={styles.cardtxt}>63</Text>
               <View style={styles.iconcontainer}>
@@ -34,7 +34,7 @@ const HomeCrads = () => {
           </TouchableOpacity>
         </View>
         <View style={{flexDirection:"row",justifyContent:"space-between", marginTop:20}}>
-          <TouchableOpacity style={styles.cards}>
+          <TouchableOpacity style={styles.cards} onPress={()=>navigation.navigate("ProviderList")}>
             <View style={styles.cardflexd}>
               <Text style={styles.cardtxt}>11</Text>
               <View style={styles.iconcontainer}>
@@ -43,7 +43,7 @@ const HomeCrads = () => {
             </View>
             <Text style={styles.cardpara}>Total Provider</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.cards}>
+          <TouchableOpacity style={styles.cards} onPress={()=>navigation.navigate("Earning")}>
             <View style={styles.cardflexd}>
               <Text style={styles.cardtxt}>$344379.37</Text>
               <View style={styles.iconcontainer}>

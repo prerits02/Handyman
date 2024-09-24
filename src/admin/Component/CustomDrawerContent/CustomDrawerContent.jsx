@@ -41,10 +41,10 @@ const CustomDrawerContent = () => {
         case 'Category':
           return (
             <View>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("CategoryList")}>
                 <Text style={styles.optionstxt}>Category List</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("AddCategory")}>
                 <Text style={styles.optionstxt}>Add Category</Text>
               </TouchableOpacity>
             </View>
@@ -52,10 +52,10 @@ const CustomDrawerContent = () => {
         case 'Service':
           return (
             <View>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("AllService")}>
                 <Text style={styles.optionstxt}>Service List</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("AddService")}>
                 <Text style={styles.optionstxt}>Add Service</Text>
               </TouchableOpacity>
             </View>
@@ -63,16 +63,16 @@ const CustomDrawerContent = () => {
         case 'Provider':
           return (
             <View>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("ProviderList")}>
                 <Text style={styles.optionstxt}>Provider List</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("AddProvider")}>
                 <Text style={styles.optionstxt}>Add Provider</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("PendingProvider")}>
                 <Text style={styles.optionstxt}>Pending Provider</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("ProviderType")}>
                 <Text style={styles.optionstxt}>Provider Type List</Text>
               </TouchableOpacity>
             </View>

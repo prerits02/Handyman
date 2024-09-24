@@ -3,8 +3,11 @@ import React from 'react'
 import Feather from "react-native-vector-icons/Feather"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import FontAwesome6 from "react-native-vector-icons/FontAwesome6"
+import { useNavigation } from '@react-navigation/native';
 
 const Provider = () => {
+
+  const navigation = useNavigation()
 
     const data = [
         {id:1,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Daany Mark"},
@@ -18,7 +21,7 @@ const Provider = () => {
         <View>
             <View style={styles.headingcon}>
               <Text style={styles.headtxt}>New Provider</Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=>navigation.navigate("ProviderList")}>
                   <Text style={styles.viewbtntxt}>View all</Text>
               </TouchableOpacity>
             </View>
@@ -27,7 +30,7 @@ const Provider = () => {
             {data.map(item=>{
                 return(
 
-                    <View style={styles.container} key={item.id}>
+                    <TouchableOpacity style={styles.container} key={item.id} onPress={()=>navigation.navigate("UpdateProvider")}>
                         <Image style={styles.containerimg} source={item.img}/>
                         <Text style={styles.containertxt}>{item.name}</Text>
                         <View style={{flexDirection:"row",gap:30,marginBottom:20}}>
@@ -43,7 +46,7 @@ const Provider = () => {
                                 <FontAwesome6 name="power-off" size={22} color="#5aa04e"/>
                             </TouchableOpacity>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 )
             })}
         </ScrollView>

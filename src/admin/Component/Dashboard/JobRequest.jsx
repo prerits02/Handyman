@@ -1,7 +1,10 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 const JobRequest = () => {
+
+  const navigation = useNavigation()
 
     const data = [
         {id:1,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Test job",price:"$34.00",status:"Requested",date:"3/23/2023 02:59 AM"},
@@ -15,7 +18,7 @@ const JobRequest = () => {
     <View style={{backgroundColor:"#FFF",paddingBottom:10}}>
         <View style={styles.headingcon}>
             <Text style={styles.headtxt}>Job Request List</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate("JobReqList")}>
                 <Text style={styles.viewbtntxt}>View all</Text>
             </TouchableOpacity>
         </View>
