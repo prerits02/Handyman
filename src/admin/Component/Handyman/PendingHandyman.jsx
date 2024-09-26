@@ -1,9 +1,13 @@
 import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import Entypo from "react-native-vector-icons/Entypo"
+import Fontisto from "react-native-vector-icons/Fontisto"
+import Feather from "react-native-vector-icons/Feather"
+import Ionicons from "react-native-vector-icons/Ionicons"
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5"
 import { useNavigation } from '@react-navigation/native';
 import React from 'react'
 
-const CategoryList = () => {
+const PendingHandyman = () => {
 
     const navigation = useNavigation()
 
@@ -25,23 +29,35 @@ const CategoryList = () => {
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Entypo name="chevron-left" size={27} color="#000"/>
                 </TouchableOpacity>
-                <Text style={styles.heading}>Category</Text>
+                <Text style={styles.heading}>Pending Handyman</Text>
             </View>
-            <TouchableOpacity onPress={()=>navigation.navigate("AddCategory")}>
-                <Entypo name="plus" size={28} color="#000"/>
-            </TouchableOpacity>
         </View>
         <View style={{backgroundColor:"#f5f7f9",paddingHorizontal:10}}>
             <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.pickercontainer}>
+                    <Fontisto name="search" size={18} style={{paddingHorizontal:20, color:"grey"}} />
+                    <TextInput style={{width:"100%", fontSize:15, fontWeight:"500", color:"#000"}} placeholderTextColor="grey" placeholder='Search here' />
+                </View>
                 <View style={{flexDirection:"row", flexWrap:"wrap",justifyContent:"space-between",marginBottom:50}}>
                     {data.map(item=>{
                     return(
-                            <TouchableOpacity style={styles.container} key={item.id} onPress={()=>navigation.navigate("UpdateCategory")}>
+                            <TouchableOpacity style={styles.container} key={item.id} >
                                 <Image style={styles.containerimg} source={item.img}/>
-                                <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:'center',width:"80%"}}>
+                                <View style={{flexDirection:"row",alignItems:"center"}}>
+                                    <View style={styles.circle}></View>
                                     <Text style={styles.containertxt}>{item.name}</Text>
-                                    <TouchableOpacity>
-                                        <Entypo name="dots-three-horizontal" size={22} />
+                                </View>
+                                <View style={{flexDirection:"row",gap:30,marginBottom:20}}>
+                                    <TouchableOpacity style={styles.iconbtn}>
+                                        <Feather name="phone-call" size={18} color="#f1b407"/>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.iconbtn}>
+                                        <Ionicons name="mail-outline" size={20} color="#f1b407"/>
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={styles.pwrcon}>
+                                    <TouchableOpacity style={styles.poerbtn}>
+                                        <FontAwesome5 name="ban" size={22} color="#b62023"/>
                                     </TouchableOpacity>
                                 </View>
                             </TouchableOpacity>
@@ -54,7 +70,7 @@ const CategoryList = () => {
   )
 }
 
-export default CategoryList
+export default PendingHandyman
 
 const styles = StyleSheet.create({
     head:{
@@ -88,7 +104,7 @@ const styles = StyleSheet.create({
       },
       containerimg:{
         width:"100%",
-        height:120,
+        height:150,
         // resizeMode:"contain",
         borderTopLeftRadius:20,
         borderTopRightRadius:20
@@ -117,5 +133,12 @@ const styles = StyleSheet.create({
         backgroundColor:"#FFF",
         padding:5,
         borderRadius:100
+      },
+      circle:{
+        backgroundColor:"red",
+        width:12,
+        height:12,
+        borderRadius:100,
+        marginRight:10
       }
 })

@@ -4,11 +4,11 @@ import React, { useState } from 'react'
 import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 
-const AddProviderType = () => {
+const AppSettings = () => {
 
-    const [selected, setSelected] = useState('Company');  // Default to 'All'
     const [isSelected, setIsSelection] = useState(false);
     const navigation = useNavigation()
+    const [chkSelected, setchkSelection] = useState(false);
 
   return (
     <>
@@ -17,47 +17,44 @@ const AddProviderType = () => {
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Entypo name="chevron-left" size={27} color="#000"/>
                 </TouchableOpacity>
-                <Text style={styles.heading}>Add Provider type</Text>
+                <Text style={styles.heading}>App Settings</Text>
             </View>
         </View>
         <View style={{backgroundColor:"#FFF",height:Dimensions.get("window").height}}>
             <View style={styles.bgContainer}>
-                    <TextInput style={[styles.input,{marginBottom:15}]} placeholder='Service Name' />
-                    <TextInput style={styles.input} placeholder='Commision' />
-                    <Text style={{marginTop:10,color:"grey",marginBottom:-10, zIndex:999,paddingLeft:10}}>Type</Text>
-                    <View style={[styles.input,{paddingHorizontal:0}]}>
-                        <Picker
-                            style={styles.picker}
-                            selectedValue={selected}
-                            onValueChange={(itemValue) => setSelected(itemValue)}
-                        >
-                            <Picker.Item label="Fixed" value="" />
-                            <Picker.Item label="Option 2" value="Option 2" />
-                            <Picker.Item label="Option 3" value="Option 3" />
-                        </Picker>
-                    </View>
-                    <Text style={{marginTop:10,color:"grey",marginBottom:-10, zIndex:999,paddingLeft:10}}>Select Status</Text>
+                    <Text style={{color:"grey",marginBottom:-10, zIndex:999,paddingLeft:10}}>Language</Text>
                     <View style={[styles.input,{paddingHorizontal:0}]}>
                         <Picker
                             style={styles.picker}
                             selectedValue={isSelected}
                             onValueChange={(itemValue) => setIsSelection(itemValue)}
                         >
-                            <Picker.Item label="Active" value="" />
-                            <Picker.Item label="Option 2" value="Option 2" />
-                            <Picker.Item label="Option 3" value="Option 3" />
+                            <Picker.Item label="English" value="English" />
+                            <Picker.Item label="Hindi" value="Hindi" />
                         </Picker>
                     </View>
-                    <TouchableOpacity style={styles.btn}>
+                    <Text style={{marginTop:15,color:"grey",marginBottom:-10, zIndex:999,paddingLeft:10}}>App Theme</Text>
+                    <View style={[styles.input,{paddingHorizontal:0}]}>
+                        <Picker
+                            style={styles.picker}
+                            selectedValue={chkSelected}
+                            onValueChange={(itemValue) => setchkSelection(itemValue)}
+                        >
+                            <Picker.Item label="Light" value="Light" />
+                            <Picker.Item label="Dark" value="Dark" />
+                            <Picker.Item label="System Default" value="System Default" />
+                        </Picker>
+                    </View>
+                    {/* <TouchableOpacity style={styles.btn}>
                         <Text style={styles.btntxt}>Save</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
             </View>
         </View>
     </>
   )
 }
 
-export default AddProviderType
+export default AppSettings
 
 const styles = StyleSheet.create({
     head:{

@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 import SwitchToggle from "react-native-switch-toggle";
 import { useNavigation } from '@react-navigation/native';
 
-const ProviderType = () => {
+const HandymanTypeList = () => {
 
     const navigation = useNavigation()
     const [on,off] = useState(true)
@@ -23,9 +23,9 @@ const ProviderType = () => {
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Entypo name="chevron-left" size={27} color="#000"/>
                 </TouchableOpacity>
-                <Text style={styles.heading}>Provider Type</Text>
+                <Text style={styles.heading}>Handyman Type</Text>
             </View>
-            <TouchableOpacity onPress={()=>navigation.navigate("AddProviderType")}>
+            <TouchableOpacity onPress={()=>navigation.navigate("AddHandymanType")}>
                 <Entypo name="plus" size={28} color="#000"/>
             </TouchableOpacity>
         </View>
@@ -36,43 +36,72 @@ const ProviderType = () => {
                         <View style={styles.flexrow}>
                             <FontAwesome name="user-o" size={18} color="#f1b407"/>
                             <View>
-                                <Text style={styles.dataheading}>Provider Type</Text>
+                                <Text style={styles.dataheading}>Handyman Type</Text>
                                 <Text style={styles.data}>{item.type}</Text>
                             </View>
                         </View>
                         <View style={styles.flexrow}>
                             <MaterialCommunityIcons name="brightness-percent" size={18} color="#f1b407"/>
-                            <Text style={styles.dataheading}>Commision</Text>
-                            {item.commision==""?null:
+                            <View>
+                                <Text style={styles.dataheading}>Commision</Text>
+                                {item.commision==""?null:
                                     <Text style={styles.data}>{item.commision}</Text>
                                 }
+                            </View>
                         </View>
                         <View style={[styles.flexrow,{borderBottomWidth:0}]}>
                             <MaterialCommunityIcons name="progress-clock" size={18} color="#f1b407"/>
                             <View style={{width:"65%"}}>
                                 <Text style={styles.dataheading}>Status</Text>
-                                <Text style={[styles.data,{color:"#058006"}]}>{item.status}</Text>
+                                {item.status=="ACTIVE"?
+                                    <Text style={[styles.data,{color:"#058006"}]}>{item.status}</Text>
+                                :
+                                    <Text style={[styles.data,{color:"red"}]}>{item.status}</Text>
+                                }
                             </View>
-                            <SwitchToggle
-                                switchOn={on}
-                                onPress={() => off(!on)}
-                                circleColorOff='#FFF'
-                                circleColorOn='#028105'
-                                backgroundColorOn='#7bbc7c'
-                                backgroundColorOff='grey'
-                                containerStyle={{
-                                    marginTop: 16,
-                                    width: 56,
-                                    height: 28,
-                                    borderRadius: 25,
-                                    padding: 5,
-                                  }}
-                                  circleStyle={{
-                                    width: 20,
-                                    height: 20,
-                                    borderRadius: 20,
-                                  }}
-                            />
+                            {item.status=="ACTIVE"?
+                                <SwitchToggle
+                                    switchOn={on}
+                                    onPress={() => off(!on)}
+                                    circleColorOff='#FFF'
+                                    circleColorOn='#028105'
+                                    backgroundColorOn='#7bbc7c'
+                                    backgroundColorOff='grey'
+                                    containerStyle={{
+                                        marginTop: 16,
+                                        width: 56,
+                                        height: 28,
+                                        borderRadius: 25,
+                                        padding: 5,
+                                    }}
+                                    circleStyle={{
+                                        width: 20,
+                                        height: 20,
+                                        borderRadius: 20,
+                                    }}
+                                />
+                            :
+                                <SwitchToggle
+                                    switchOn={false}
+                                    onPress={() => off(!on)}
+                                    circleColorOff='#FFF'
+                                    circleColorOn='#028105'
+                                    backgroundColorOn='#7bbc7c'
+                                    backgroundColorOff='grey'
+                                    containerStyle={{
+                                        marginTop: 16,
+                                        width: 56,
+                                        height: 28,
+                                        borderRadius: 25,
+                                        padding: 5,
+                                    }}
+                                    circleStyle={{
+                                        width: 20,
+                                        height: 20,
+                                        borderRadius: 20,
+                                    }}
+                                />
+                            }
                         </View>
                     </View>
                 )
@@ -82,7 +111,7 @@ const ProviderType = () => {
   )
 }
 
-export default ProviderType
+export default HandymanTypeList
 
 const styles = StyleSheet.create({
     head:{

@@ -1,6 +1,6 @@
 import { Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
-import Head from '../Component/Head/Head';
+import Entypo from 'react-native-vector-icons/Entypo';
 import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 
@@ -21,7 +21,14 @@ const Booking = () => {
   return (
     <>
       <View style={{backgroundColor:"#FFF",height:Dimensions.get("window").height}}>
-        <Head name="Booking" />
+        <View style={styles.head}>
+            <View style={{flexDirection:"row", alignItems:"center"}}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Entypo name="chevron-left" size={27} color="#000"/>
+                </TouchableOpacity>
+                <Text style={styles.heading}>Booking</Text>
+            </View>
+        </View>
         <View style={styles.pickercontainer}>
           <Picker
             style={styles.picker}
@@ -170,4 +177,18 @@ const styles = StyleSheet.create({
     marginVertical:20,
     borderRadius:10
   },
+  head:{
+    flexDirection:"row",
+    paddingHorizontal:10,
+    alignItems:"center",
+    paddingVertical:10,
+    backgroundColor:"#f1b407",
+    justifyContent:"space-between"
+},
+heading:{
+    marginLeft:20,
+    fontSize:20,
+    color:"#000",
+    fontWeight:"700"
+},
 });

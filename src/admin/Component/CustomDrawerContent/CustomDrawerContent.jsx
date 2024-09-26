@@ -22,10 +22,25 @@ const CustomDrawerContent = () => {
       setExpandedCategory(item);
     }
     if(item == "Booking"){
-      navigation.dispatch(jumpToAction);
+      navigation.navigate("Booking");
     }
     else if(item == "Dashboard"){
       navigation.dispatch(jumpToDash);
+    }
+    else if(item == "Users"){
+      navigation.navigate("Users");
+    }
+    else if(item == "Payment"){
+      navigation.navigate("Payments");
+    }
+    else if(item == "Packages"){
+      navigation.navigate("Packages");
+    }
+    else if(item == "Earning"){
+      navigation.navigate("Earning");
+    }
+    else if(item == "About App"){
+      navigation.navigate("AboutApp");
     }
   };
 
@@ -80,16 +95,16 @@ const CustomDrawerContent = () => {
         case 'Handyman':
           return (
             <View>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("HandymanList")}>
                 <Text style={styles.optionstxt}>Handyman List</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("AddHandyman")}>
                 <Text style={styles.optionstxt}>Add Handyman</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("PendingHandyman")}>
                 <Text style={styles.optionstxt}>Pending Handyman</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("HandymanTypeList")}>
                 <Text style={styles.optionstxt}>Handyman Type List</Text>
               </TouchableOpacity>
             </View>
@@ -97,10 +112,10 @@ const CustomDrawerContent = () => {
         case 'Document':
           return (
             <View>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("DocumentList")}>
                 <Text style={styles.optionstxt}>Document List</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("AddDocument")}>
                 <Text style={styles.optionstxt}>Add Document</Text>
               </TouchableOpacity>
             </View>
@@ -108,10 +123,10 @@ const CustomDrawerContent = () => {
         case 'Coupon':
           return (
             <View>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("CouponList")}>
                 <Text style={styles.optionstxt}>Coupon List</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("AddCoupon")}>
                 <Text style={styles.optionstxt}>Add Coupon</Text>
               </TouchableOpacity>
             </View>
@@ -119,10 +134,10 @@ const CustomDrawerContent = () => {
         case 'Settings':
           return (
             <View>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("PushNotification")}>
                 <Text style={styles.optionstxt}>Push Notifications Settings</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.drawerlist}>
+              <TouchableOpacity style={styles.drawerlist} onPress={()=>navigation.navigate("AppSettings")}>
                 <Text style={styles.optionstxt}>App Settings</Text>
               </TouchableOpacity>
             </View>
@@ -216,7 +231,7 @@ const CustomDrawerContent = () => {
                 <Text style={styles.listtext}>Share App</Text>
             </TouchableOpacity>
         </ScrollView>
-        <TouchableOpacity style={[styles.drawerlist, { justifyContent: "center", alignItems: "center" }]}>
+        <TouchableOpacity style={[styles.drawerlist, { justifyContent: "center", alignItems: "center" }]} onPress={()=>navigation.navigate("Signin")}>
             <Text style={styles.listtext}>Logout</Text>
         </TouchableOpacity>
         <Text style={{ textAlign: "center",marginBottom:20}}>v1.0</Text>

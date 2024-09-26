@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 
-const AddProviderType = () => {
+const AddHandymanType = () => {
 
     const [selected, setSelected] = useState('Company');  // Default to 'All'
     const [isSelected, setIsSelection] = useState(false);
@@ -17,12 +17,12 @@ const AddProviderType = () => {
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Entypo name="chevron-left" size={27} color="#000"/>
                 </TouchableOpacity>
-                <Text style={styles.heading}>Add Provider type</Text>
+                <Text style={styles.heading}>Add Handyman type</Text>
             </View>
         </View>
         <View style={{backgroundColor:"#FFF",height:Dimensions.get("window").height}}>
             <View style={styles.bgContainer}>
-                    <TextInput style={[styles.input,{marginBottom:15}]} placeholder='Service Name' />
+                    <TextInput style={[styles.input,{marginBottom:15}]} placeholder='Type Name' />
                     <TextInput style={styles.input} placeholder='Commision' />
                     <Text style={{marginTop:10,color:"grey",marginBottom:-10, zIndex:999,paddingLeft:10}}>Type</Text>
                     <View style={[styles.input,{paddingHorizontal:0}]}>
@@ -57,7 +57,7 @@ const AddProviderType = () => {
   )
 }
 
-export default AddProviderType
+export default AddHandymanType
 
 const styles = StyleSheet.create({
     head:{

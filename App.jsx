@@ -29,6 +29,22 @@ import AddProvider from './src/admin/Component/Provider/AddProvider';
 import PendingProvider from './src/admin/Component/Provider/PendingProvider';
 import ProviderType from './src/admin/Component/Provider/ProviderType';
 import AddProviderType from './src/admin/Component/Provider/AddProviderType';
+import HandymanList from './src/admin/Component/Handyman/HandymanList';
+import UpdateHandyman from './src/admin/Component/Handyman/UpdateHandyman';
+import AddHandyman from './src/admin/Component/Handyman/AddHandyman';
+import PendingHandyman from './src/admin/Component/Handyman/PendingHandyman';
+import HandymanTypeList from './src/admin/Component/Handyman/HandymanTypeList';
+import AddHandymanType from './src/admin/Component/Handyman/AddHandymanType';
+import Payments from './src/admin/Screens/Payments';
+import Packages from './src/admin/Screens/Packages';
+import AddPackage from './src/admin/Component/Package/AddPackage';
+import DocumentList from './src/admin/Component/Document/DocumentList';
+import AddDocument from './src/admin/Component/Document/AddDocument';
+import CouponList from './src/admin/Component/Coupon/CouponList';
+import AddCoupon from './src/admin/Component/Coupon/AddCoupon';
+import PushNotification from './src/admin/Component/Settings/PushNotification';
+import AppSettings from './src/admin/Component/Settings/AppSettings';
+import AboutApp from './src/admin/Screens/AboutApp';
 // import './gesture-handler';
 
 const Stack = createNativeStackNavigator();
@@ -60,6 +76,22 @@ const App = () => {
         <Stack.Screen name="PendingProvider" component={PendingProvider} />
         <Stack.Screen name="ProviderType" component={ProviderType} />
         <Stack.Screen name="AddProviderType" component={AddProviderType} />
+        <Stack.Screen name="HandymanList" component={HandymanList} />
+        <Stack.Screen name="UpdateHandyman" component={UpdateHandyman} />
+        <Stack.Screen name="AddHandyman" component={AddHandyman} />
+        <Stack.Screen name="PendingHandyman" component={PendingHandyman} />
+        <Stack.Screen name="HandymanTypeList" component={HandymanTypeList} />
+        <Stack.Screen name="AddHandymanType" component={AddHandymanType} />
+        <Stack.Screen name="Payments" component={Payments} />
+        <Stack.Screen name="Packages" component={Packages} />
+        <Stack.Screen name="AddPackage" component={AddPackage} />
+        <Stack.Screen name="DocumentList" component={DocumentList} />
+        <Stack.Screen name="AddDocument" component={AddDocument} />
+        <Stack.Screen name="CouponList" component={CouponList} />
+        <Stack.Screen name="AddCoupon" component={AddCoupon} />
+        <Stack.Screen name="PushNotification" component={PushNotification} />
+        <Stack.Screen name="AppSettings" component={AppSettings} />
+        <Stack.Screen name="AboutApp" component={AboutApp} />
         <Stack.Screen name="Main" component={Home} />
         <Stack.Screen name="GinieLocations" component={GinieLocations} />
         <Stack.Screen name="PickupLocation" component={PickupLocation} />

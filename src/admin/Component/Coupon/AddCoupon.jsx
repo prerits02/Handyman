@@ -1,10 +1,12 @@
 import { Dimensions, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import Entypo from "react-native-vector-icons/Entypo"
+import EvilIcons from "react-native-vector-icons/EvilIcons"
 import React, { useState } from 'react'
 import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 
-const AddProviderType = () => {
+
+const AddCoupon = () => {
 
     const [selected, setSelected] = useState('Company');  // Default to 'All'
     const [isSelected, setIsSelection] = useState(false);
@@ -17,24 +19,33 @@ const AddProviderType = () => {
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Entypo name="chevron-left" size={27} color="#000"/>
                 </TouchableOpacity>
-                <Text style={styles.heading}>Add Provider type</Text>
+                <Text style={styles.heading}>Add Coupon</Text>
             </View>
         </View>
         <View style={{backgroundColor:"#FFF",height:Dimensions.get("window").height}}>
             <View style={styles.bgContainer}>
-                    <TextInput style={[styles.input,{marginBottom:15}]} placeholder='Service Name' />
-                    <TextInput style={styles.input} placeholder='Commision' />
+                    <TextInput style={[styles.input,{marginBottom:15}]} placeholder='Coupon Code' />
                     <Text style={{marginTop:10,color:"grey",marginBottom:-10, zIndex:999,paddingLeft:10}}>Type</Text>
-                    <View style={[styles.input,{paddingHorizontal:0}]}>
-                        <Picker
-                            style={styles.picker}
-                            selectedValue={selected}
-                            onValueChange={(itemValue) => setSelected(itemValue)}
-                        >
-                            <Picker.Item label="Fixed" value="" />
-                            <Picker.Item label="Option 2" value="Option 2" />
-                            <Picker.Item label="Option 3" value="Option 3" />
-                        </Picker>
+                    <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
+                        <View style={[styles.input,{paddingHorizontal:0,width:"47%"}]}>
+                            <Picker
+                                style={styles.picker}
+                                selectedValue={selected}
+                                onValueChange={(itemValue) => setSelected(itemValue)}
+                            >
+                                <Picker.Item label="Fixed" value="" />
+                                <Picker.Item label="Option 2" value="Option 2" />
+                                <Picker.Item label="Option 3" value="Option 3" />
+                            </Picker>
+                        </View>
+                        <View style={{width:"47%"}}>
+                            <Text style={{color:"grey",marginBottom:-10, zIndex:999,paddingLeft:10,marginTop:-10}}>Discount</Text>
+                                <TextInput style={[styles.input]}  value='0' />
+                        </View>
+                    </View>
+                    <View style={[styles.input,{marginTop:20,flexDirection:"row",alignItems:"center",gap:10}]}>
+                        <EvilIcons name="calendar" size={15}/>
+                        <TextInput placeholder='Exp. Date' />
                     </View>
                     <Text style={{marginTop:10,color:"grey",marginBottom:-10, zIndex:999,paddingLeft:10}}>Select Status</Text>
                     <View style={[styles.input,{paddingHorizontal:0}]}>
@@ -48,6 +59,8 @@ const AddProviderType = () => {
                             <Picker.Item label="Option 3" value="Option 3" />
                         </Picker>
                     </View>
+                    <Text style={{marginTop:20,color:"grey",fontSize:15,fontWeight:"600"}}>Pick a Service</Text>
+                    <TextInput style={[styles.input,{marginTop:20}]} placeholder='Description' multiline={true} numberOfLines={4} />
                     <TouchableOpacity style={styles.btn}>
                         <Text style={styles.btntxt}>Save</Text>
                     </TouchableOpacity>
@@ -57,7 +70,7 @@ const AddProviderType = () => {
   )
 }
 
-export default AddProviderType
+export default AddCoupon
 
 const styles = StyleSheet.create({
     head:{
