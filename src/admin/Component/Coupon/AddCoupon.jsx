@@ -1,16 +1,20 @@
-import { Dimensions, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Dimensions, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native'
 import Entypo from "react-native-vector-icons/Entypo"
 import EvilIcons from "react-native-vector-icons/EvilIcons"
 import React, { useState } from 'react'
 import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
-
+import DatePicker from 'react-native-date-picker'
 
 const AddCoupon = () => {
 
     const [selected, setSelected] = useState('Company');  // Default to 'All'
     const [isSelected, setIsSelection] = useState(false);
     const navigation = useNavigation()
+    const [date, setDate] = useState(new Date())
+  const [open, setOpen] = useState(false)
+
+  console.log(date)
 
   return (
     <>
@@ -38,15 +42,29 @@ const AddCoupon = () => {
                                 <Picker.Item label="Option 3" value="Option 3" />
                             </Picker>
                         </View>
-                        <View style={{width:"47%"}}>
+                        <View style={{width:"47%"}} >
                             <Text style={{color:"grey",marginBottom:-10, zIndex:999,paddingLeft:10,marginTop:-10}}>Discount</Text>
                                 <TextInput style={[styles.input]}  value='0' />
                         </View>
                     </View>
-                    <View style={[styles.input,{marginTop:20,flexDirection:"row",alignItems:"center",gap:10}]}>
+                    <TouchableOpacity style={[styles.input,{marginTop:20,flexDirection:"row",alignItems:"center",gap:10}]} onPress={() => setOpen(true)}>
                         <EvilIcons name="calendar" size={15}/>
-                        <TextInput placeholder='Exp. Date' />
-                    </View>
+                        <Text style={{paddingVertical:20,fontSize:15,color:"#000",fontWeight:"400"}}>{date.toString()}</Text>
+                        {/* <Text>{date}</Text> */}
+                    </TouchableOpacity>
+                    <DatePicker
+                        modal
+                        open={open}
+                        date={date}
+                        mode="date"
+                        onConfirm={(date) => {
+                        setOpen(false)
+                        setDate(date)
+                        }}
+                        onCancel={() => {
+                        setOpen(false)
+                        }}
+                    />
                     <Text style={{marginTop:10,color:"grey",marginBottom:-10, zIndex:999,paddingLeft:10}}>Select Status</Text>
                     <View style={[styles.input,{paddingHorizontal:0}]}>
                         <Picker

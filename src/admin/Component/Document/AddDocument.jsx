@@ -5,6 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 import CheckBox from '@react-native-community/checkbox';
 
+
 const AddDocument = () => {
 
     const [isSelected, setIsSelection] = useState(false);
