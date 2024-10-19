@@ -1,18 +1,14 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios'; 
 
 const JobRequest = () => {
 
   const navigation = useNavigation()
 
-    const data = [
-        {id:1,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Test job",price:"$34.00",status:"Requested",date:"3/23/2023 02:59 AM"},
-        {id:2,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Jsjjd",price:"$500.00",status:"Requested",date:"3/23/2023 02:01 AM"},
-        {id:3,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Test",price:"$1,000.00",status:"Requested",date:"3/23/2023 02:59 AM"},
-        {id:4,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Test",price:"$1,000.00",status:"Requested",date:"3/23/2023 10:11 AM"},
-        {id:5,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Service Mesin Ac",price:"$200.00",status:"Requested",date:"3/23/2023 02:59 AM"},
-    ]
+    
+ 
 
   return (
     <View style={{backgroundColor:"#FFF",paddingBottom:10}}>

@@ -3,44 +3,7 @@ import React, { useState } from 'react'
 
 const Bestsellers = () => {
 
-    const [data,setData] = useState([
-        {id:1,desc:"Milk, Curd & Paneer",img:[
-            {imgid:1,res:require("../../../assets/images/products.png")},
-            {imgid:2,res:require("../../../assets/images/products.png")},
-            {imgid:3,res:require("../../../assets/images/products.png")},
-            {imgid:4,res:require("../../../assets/images/products.png")}
-        ]},
-        {id:2,desc:"Vegetables",img:[
-            {imgid:1,res:require("../../../assets/images/products.png")},
-            {imgid:2,res:require("../../../assets/images/products.png")},
-            {imgid:3,res:require("../../../assets/images/products.png")}
-        ]},
-        {id:3,desc:"Fruits",img:[
-            {imgid:1,res:require("../../../assets/images/products.png")},
-            {imgid:2,res:require("../../../assets/images/products.png")},
-            {imgid:3,res:require("../../../assets/images/products.png")},
-            {imgid:4,res:require("../../../assets/images/products.png")},
-            {imgid:5,res:require("../../../assets/images/products.png")},
-            {imgid:6,res:require("../../../assets/images/products.png")},
-            {imgid:7,res:require("../../../assets/images/products.png")}
-        ]},
-        {id:4,desc:"Chips & Munchies",img:[
-            {imgid:1,res:require("../../../assets/images/products.png")},
-            {imgid:2,res:require("../../../assets/images/products.png")},
-            {imgid:3,res:require("../../../assets/images/products.png")},
-            {imgid:4,res:require("../../../assets/images/products.png")},
-            {imgid:5,res:require("../../../assets/images/products.png")},
-            {imgid:6,res:require("../../../assets/images/products.png")},
-            {imgid:7,res:require("../../../assets/images/products.png")},
-            {imgid:8,res:require("../../../assets/images/products.png")},
-            {imgid:9,res:require("../../../assets/images/products.png")},
-            {imgid:10,res:require("../../../assets/images/products.png")},
-            {imgid:11,res:require("../../../assets/images/products.png")},
-            {imgid:12,res:require("../../../assets/images/products.png")},
-            {imgid:13,res:require("../../../assets/images/products.png")},
-            {imgid:14,res:require("../../../assets/images/products.png")}
-        ]},
-    ])
+    
 
   return (
     <View>

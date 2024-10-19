@@ -1,17 +1,15 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React,{useEffect} from 'react'
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 
 const NewBooking = () => {
 
   const navigation = useNavigation()
 
-    const data = [
-        {id:1,img:require("../../../assets/images/wokerimgexample.jpg"),status:"Pending",bid:"#725",name:"electrical repairs, rewires",price:"$108.00",discount:"10%",date:"25 Mar, 2023 At 10:56 AM",Provider:"Provider Demo"},
-        {id:2,img:require("../../../assets/images/wokerimgexample.jpg"),status:"Pending",bid:"#724",name:"Cleaning",price:"$200.00",discount:"none",date:"25 Mar, 2023 At 02:51 PM",Provider:"Provider Demo"},
-        {id:3,img:require("../../../assets/images/wokerimgexample.jpg"),status:"Completed",bid:"#721",name:"Test",price:"$121.77",discount:"1%",date:"23 Mar, 2023 At 11:06 PM",Provider:"Provider Demo"},
-    ]
+  
 
+   
   return (
     <View style={{backgroundColor:"#FFF"}}>
         <View style={styles.headingcon}>

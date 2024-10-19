@@ -18,19 +18,7 @@ const Details = ({ route }) => {
     const { status } = route.params;
     const [ModalVisible,setModalVisible] = useState(false)
 
-    const modaldata = [
-        {id:1,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from pending approval to complete"},
-        {id:2,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from pending approval to complete"},
-        {id:3,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from pending approval to complete"},
-        {id:4,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from pending approval to complete"},
-        {id:5,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from ongaoin to in progress"},
-        {id:6,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from accepted to ongoing"},
-        {id:7,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking has been assigned to provider demo"},
-        {id:8,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"Booking status has been changed from pending approval to complete"},
-        {id:9,time:"12:35 PM",date:"22 Mar",status:"Update booking status",text:"New booking added by customer"},
-    ]
-
-
+    
       handleOnScroll = event => {
         // this.setState({
         //   scrollOffset: event.nativeEvent.contentOffset.y,

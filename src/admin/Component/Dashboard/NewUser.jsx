@@ -9,12 +9,11 @@ const NewUser = () => {
 
   const navigation = useNavigation()
 
-    const data = [
-        {id:1,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Daany Mark"},
-        {id:2,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Bear giail"},
-        {id:3,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Jhony Mark"},
-        {id:4,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Chris Gayle"}
-    ]
+  
+
+  
+
+
 
   return (
     <View style={styles.ProviderCon}>

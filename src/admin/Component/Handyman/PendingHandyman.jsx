@@ -11,16 +11,7 @@ const PendingHandyman = () => {
 
     const navigation = useNavigation()
 
-    const data = [
-        {id:1,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Daany Mark"},
-        {id:2,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Bear giail"},
-        {id:3,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Jhony Mark"},
-        {id:4,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Chris Gayle"},
-        {id:5,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Daany Mark"},
-        {id:6,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Bear giail"},
-        {id:7,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Jhony Mark"},
-        {id:8,img:require("../../../assets/images/wokerimgexample.jpg"),name:"Chris Gayle"}
-    ]
+    
 
   return (
     <>
